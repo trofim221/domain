@@ -13,7 +13,4 @@ class Domain {
 
 $verify_domain = new Domain();
 echo $verify_domain->verifySubDomain('example.com');
-echo '<br>';
-echo $verify_domain->verifySubDomain('sub.example.com');
-
 
