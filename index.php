@@ -1,16 +1,24 @@
 <?php
 
-class Domain {
-    public function verifySubDomain($domain)
+class Domain
+{
+    function verifySubDomain($url)
     {
-        if (count(explode('.', $domain)) > 2) {
-            return true;
-        } else {
+        $verify_domain = (substr_count($url, '.'));
+        preg_match('/com.\w{2}/', $url);
+
+        if ($verify_domain < 2) {
             return false;
+        } elseif ($verify_domain >= 3) {
+            return true;
+        } elseif ($verify_domain >= 2 && !empty(preg_match('/com.\w{2}/', $url))) {
+            return false;
+        } else {
+            return true;
         }
     }
 }
 
 $verify_domain = new Domain();
-echo $verify_domain->verifySubDomain('example.com');
 
+echo $verify_domain->verifySubDomain('example.com');
