@@ -5,7 +5,6 @@ class Domain
     function verifySubDomain($url)
     {
         $verify_domain = (substr_count($url, '.'));
-        preg_match('/com.\w{2}/', $url);
 
         if ($verify_domain < 2) {
             return false;
