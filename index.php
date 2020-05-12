@@ -2,7 +2,7 @@
 
 class Domain
 {
-    function verifySubDomain($url)
+    public function verifySubDomain($url)
     {
         $verify_domain = (substr_count($url, '.'));
 
