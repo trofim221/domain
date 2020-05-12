@@ -4,7 +4,7 @@ class subDomain
 {
     public function extractDomain($domain)
     {
-        if(preg_match("/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i", $domain, $matches))
+        if(preg_match("/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,7})$/i", $domain, $matches))
         {
             return $matches['domain'];
         } else {
@@ -29,11 +29,11 @@ class subDomain
 
 
 $domainArray = array(
-    'semalt.net.ua',
-    'sub1.semalt.net.ua',
-    'sub1.semalt.net',
-    'sub1.sub2.semalt.net',
-    'sub1.sub2.sub3.semalt.net'
+    'antonov.kiev.ua',
+    'sub1.antonov.kiev.ua',
+    'sub1.antonov.kiev.ua',
+    'sub1.sub2.antonov.kiev.ua',
+    'sub1.sub2.sub3.antonov.kiev.ua'
 );
 
 $extract_domain = new subDomain();
@@ -42,4 +42,5 @@ foreach($domainArray as $k => $v)
 {
     echo $k." => ".$extract_domain->extractSubDomains($v)."<br>";
 }
+
 
